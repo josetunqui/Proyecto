@@ -7,26 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnRight = section.querySelector('.btn-right');
         const items = [...container.children];
 
-        // Estado para evitar clics rápidos
         let isMoving = false;
 
-        // Clonar elementos para el efecto infinito
         container.append(...items.map(i => i.cloneNode(true)));
 
         const getStep = () => items[0].offsetWidth + 20;
 
         const move = (direction) => {
-            if (isMoving) return; // Si ya se está moviendo, ignorar el clic
+            if (isMoving) return; 
             isMoving = true;
 
             container.style.scrollBehavior = 'smooth';
             container.scrollLeft += direction * getStep();
 
-            // Esperar a que termine la animación (500ms coincide con el CSS smooth)
             setTimeout(() => {
                 const halfWidth = container.scrollWidth / 2;
 
-                // Lógica de reposición instantánea
                 if (container.scrollLeft >= halfWidth) {
                     container.style.scrollBehavior = 'auto';
                     container.scrollLeft = 0;
@@ -35,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.scrollLeft = halfWidth;
                 }
                 
-                isMoving = false; // Liberar el bloqueo
+                isMoving = false; 
             }, 500); 
         };
 
