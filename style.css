@@ -259,6 +259,7 @@
     background: var(--footer-blue);
     height: 100px;
     width: 100%;
+    color: white;
 }
 
 @media (max-width: 900px) {
