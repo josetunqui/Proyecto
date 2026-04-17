@@ -409,6 +409,14 @@
 
 }
 
+.info-empresa {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #111;
+}
+
 @media (max-width: 900px) {
     .items-container {
         grid-template-columns: repeat(2, 1fr);
