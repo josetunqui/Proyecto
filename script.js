@@ -43,24 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('.portadas img');
     let currentIndex = 0;
-    const intervalTime = 5000; // Tiempo en milisegundos (5 segundos)
+    const intervalTime = 5000; 
 
-    // Inicializar la primera imagen
     if (images.length > 0) {
         images[0].classList.add('active');
     }
 
     function nextImage() {
-        // Quitar clase activa a la imagen actual
         images[currentIndex].classList.remove('active');
         
-        // Calcular el índice de la siguiente imagen
         currentIndex = (currentIndex + 1) % images.length;
         
-        // Añadir clase activa a la nueva imagen
         images[currentIndex].classList.add('active');
     }
 
-    // Iniciar el intervalo
     setInterval(nextImage, intervalTime);
 });
