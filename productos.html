@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImportShop S.A.C.</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js"></script>
+    <script type="module" src="js/productos-app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="imagenes/empresa/logo.png">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <img src="imagenes/empresa/logo.png" alt="Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Buscar...">
+            <i class="fa fa-search"></i>
+        </div>
+
+    </header>
+
+    <section class="hero">
+        <div class="portadas">
+            <img src="imagenes/empresa/Portada.jpg" alt="Banner Principal 1">
+            <img src="imagenes/empresa/portada2.jpeg" alt="Banner Principal 2">
+            <img src="imagenes/empresa/portada3.png" alt="Banner Principal 3">
+        </div>
+    </section>
+    <section class="Empreesa">
+        <div class="info-empresa">
+            <h1>PRODUCTOS</h1>
+            <p>Encuentra nuestros productos disponibles y elige el que mas se adapte a ti</p>
+        </div>
+    </section>
+    <main class="wrapper productos-layout">
+        <aside class="sidebar-filtros">
+            <h2>FILTROS</h2>
+            
+            <div class="filtro-grupo">
+                <h3>Categoría <i class="fa fa-hand-pointer" style="font-size: 0.8em;"></i></h3>
+                <select id="filtro-categoria">
+                    <option value="todas">Todas</option>
+                </select>
+            </div>
+
+            <div class="filtro-grupo">
+                <h3>Marca</h3>
+                <select id="filtro-marca">
+                    <option value="todas">Todas</option>
+                </select>
+            </div>
+
+            <button id="btn-filtrar" class="btn-filtrar">Filtrar</button>
+
+            <div class="sidebar-banner">
+                <img src="imagenes/empresa/portada2.jpeg" alt="Banner promocional" onerror="this.src='imagenes/empresa/logo.png'">
+            </div>
+        </aside>
+
+        <section class="productos-main">
+            <div class="productos-grid" id="productos-grid">
+                <!-- Se llenará con JS -->
+            </div>
+            
+            <div class="paginacion" id="paginacion">
+                <!-- Se llenará con JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="bottom-bar">
+
+        <section class="grid-categories">
+            <div class="card-profile">
+                <div class="img-container">
+                    <img src="imagenes/integrantes/jose.png" alt="Jose Tunqui">
+                </div>
+                <div class="info-integrante">
+                    <h3>Jose Tunqui</h3>
+                    <p class="rol">Desarrollador Backend</p>
+                    <p class="desc">Estudiante de Ingeniería de Sistemas - VI Ciclo</p>
+                    <p class="desc">Especialista en </p>
+                </div>
+            </div>
+
+            <div class="card-profile">
+                <div class="img-container">
+                    <img src="imagenes/integrantes/dayana.jpeg" alt="Dayana Canelo">
+                </div>
+                <div class="info-integrante">
+                    <h3>Dayana Canelo</h3>
+                    <p class="rol">Diseño UI/UX</p>
+                    <p class="desc">Especialista en interfaces modernas y responsive</p>
+                </div>
+            </div>
+
+            <div class="card-profile">
+                <div class="img-container">
+                    <img src="imagenes/integrantes/jhon.jpeg" alt="Jhon Sulca">
+                </div>
+                <div class="info-integrante">
+                    <h3>Jhon SuLlca</h3>
+                    <p class="rol">Diseño UI/UX</p>
+                    <p class="desc">Especialista en interfaces modernas y responsive</p>
+                </div>
+            </div>
+        </section>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank"><img src="imagenes/redes/ig.png" alt="Instagram"></a>
+                <a href="https://facebook.com" target="_blank"><img src="imagenes/redes/Face.png" alt="Facebook"></a>
+                <a href="https://x.com" target="_blank"><img src="imagenes/redes/X.png" alt="Twiter"></a>
+            </div>
+
+            <p class="copyright">ImportShop S.A.C &copy; 2026.</p>
+            <p class="rights-text">Todos los derechos reservados. Desarrollado por Alumnos de la UTP</p>
+            <br>
+            <div class="aliados">
+                <p>Michael Kors | Guess | Casio</p>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
