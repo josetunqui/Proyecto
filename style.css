@@ -1,15 +1,19 @@
 :root {
     --bg-card: #ece7e4;
     --accent: #000;
-    --footer-blue: #5b6494;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
+    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 .main-header {
     background: #fff;
@@ -25,7 +29,7 @@
 }
 
 .logo {
-    height: 60px;
+    height: 80px;
 }
 
 .nav-links {
@@ -64,11 +68,21 @@
 
 .hero {
     width: 100%;
-    height: auto;
+    height: 300px;
     position: relative;
     overflow: hidden;
-    aspect-ratio: 16 / 6;
+    border-radius: 25px;
 }
+
+
+
+@media (max-width: 600px){
+    .hero{
+        height: 180px;
+    }
+}
+
+
 
 .portadas {
     width: 100%;
@@ -181,35 +195,31 @@
     text-align: center;
 }
 
+
+
+/* Video */
 .video-wrapper {
     position: relative;
     width: 100%;
-    border-radius: 20px;
+    max-width: 900px;
+    height: 420px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     background: #000;
     line-height: 0;
+    margin: auto;
 }
 
 .video-wrapper video {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
     display: block;
-    transition: transform 0.5s ease;
 }
 
-.video-wrapper:hover video {
-    transform: scale(1.02);
-}
 
-.video-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    color: white;
-}
 
 .presentacion-info {
     margin-top: 30px;
@@ -250,14 +260,103 @@
     font-size: 1.2rem;
 }
 
-
-
-.bottom-bar {
-    background: var(--footer-blue);
-    height: auto;
-    width: auto;
-    color: black;
+.carousel-grid {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
 }
+
+
+
+
+.items-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    width: 100%;
+}
+
+
+
+
+.placeholder {
+    flex: 0 0 calc(25% - 15px);
+    background: #fff;
+    height: 420px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.placeholder:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    background: #f4f4f4;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.product-name {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #5b6494;
+    font-weight: 800;
+}
+
+
+
+.nav-btn {
+    border: 1px solid #ccc;
+    background: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover{
+    background:#eee;
+}
+
+
+
 
 .mercado-section {
     margin-top: 40px;
@@ -294,50 +393,132 @@
     max-width: 800px;
 }
 
-.footer-bottom {
-    text-align: center;
-    padding: 30px 20px 40px;
-    margin-top: 20px;
+/* FOOTER */
+
+.bottom-bar{
+    background: #3e3d6d;
+    width: 100%;
+    padding: 30px 60px 10px;
+    color: white;
+    overflow: hidden;
 }
 
+/* CONTENEDOR */
 
-.social-links {
+.footer-container{
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
+    align-items: flex-start;
+    gap: 60px;
 }
 
-.social-links a {
-    display: inline-block;
-    transition: transform 0.2s;
+/* CAJAS */
+
+.footer-box{
+    width: 220px;
+    text-align: center;
 }
 
-.social-links a:hover {
-    transform: translateY(-3px);
+.footer-box h2{
+    color: white;
+    font-size: 22px;
+    margin-bottom: 18px;
+    font-weight: 600;
 }
 
-.social-links img {
-    width: 40px;
-    height: 40px;
+.footer-box a,
+.footer-box p{
+    color: #ececec;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* EFECTO */
+
+.footer-box a:hover{
+    color: white;
+    padding-left: 10px;
+}
+
+/* LINEAS */
+
+.linea{
+    width: 1px;
+    height: 90px;
+    background-color: rgba(255,255,255,0.35);
+    margin-top: 49px;
+}
+
+/* REDES */
+
+.social-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.social-links img{
+    width: 32px;
+    height: 32px;
     object-fit: contain;
-    border-radius: 8px;
+    transition: 0.3s;
 }
 
-.copyright,
-.rights-text {
-    font-size: 0.9rem;
-    color: #fff;
-    margin-top: 4px;
-    font-weight: 500;
+.social-links img:hover{
+    transform: scale(1.1);
 }
 
-.aliados {
-    color: black;
-    font-size: 2rem;
-    font-weight: 500;
+/* MARCAS */
 
+.aliados p{
+    font-size: 14px;
+    color: #f1f1f1;
+    line-height: 1.5;
 }
+
+/* FINAL */
+
+.footer-bottom{
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+.copyright{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.rights-text{
+    font-size: 13px;
+    color: #ececec;
+}
+
+@media (max-width: 768px){
+
+    .footer-container{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .linea{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
 
 .info-empresa {
     text-align: center;
@@ -348,14 +529,22 @@
 }
 
 
+@media (max-width: 900px) {
+    .placeholder {
+        min-width: calc(50% - 8px);
+    }
+}
 
 @media (max-width: 600px) {
     .nav-links {
         display: none;
     }
-
     .grid-categories {
         grid-template-columns: 1fr;
+    }
+
+    .placeholder {
+        min-width: 100%;
     }
 
     .mercado-imagenes {
@@ -369,6 +558,7 @@
     }
 
 }
+
 
 /* Layout Productos */
 .productos-layout {
@@ -549,6 +739,8 @@
     cursor: not-allowed;
 }
 
+
+
 @media (max-width: 1100px) {
     .productos-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -579,11 +771,3 @@
     }
 }
 
-.transition-hover {
-    transition: transform 0.3s ease;
-}
-
-.transition-hover:hover {
-    transform: translateY(-5px);
-}
-
