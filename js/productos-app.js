@@ -6,14 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectMarca = document.getElementById('filtro-marca');
     const btnFiltrar = document.getElementById('btn-filtrar');
     const paginacion = document.getElementById('paginacion');
+    const inputBusqueda = document.getElementById('header-busqueda');
+    const inputPrecio = document.getElementById('filtro-precio');
 
-    if (!grid) return; // Salir si no estamos en la pagina de productos
+    if (!grid) return;
 
     const ITEMS_PER_PAGE = 12;
     let currentPage = 1;
     let filteredProductos = [...productos];
 
-    // Llenar selectores
     const categorias = [...new Set(productos.map(p => p.categoria))].sort();
     const marcas = [...new Set(productos.map(p => p.marca))].sort();
 
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const renderProductos = () => {
         grid.innerHTML = '';
-        
+
         const start = (currentPage - 1) * ITEMS_PER_PAGE;
         const end = start + ITEMS_PER_PAGE;
         const paginatedItems = filteredProductos.slice(start, end);
@@ -107,19 +108,36 @@ document.addEventListener('DOMContentLoaded', () => {
         paginacion.appendChild(btnNext);
     };
 
-    btnFiltrar.addEventListener('click', () => {
+    const aplicarFiltros = () => {
         const cat = selectCategoria.value;
         const marca = selectMarca.value;
+        const textoBusqueda = inputBusqueda ? inputBusqueda.value.toLowerCase() : '';
+        const precioMaximo = inputPrecio && inputPrecio.value !== '' ? parseFloat(inputPrecio.value) : NaN;
 
         filteredProductos = productos.filter(p => {
             const matchCat = cat === 'todas' || p.categoria === cat;
             const matchMarca = marca === 'todas' || p.marca === marca;
-            return matchCat && matchMarca;
+            const matchTexto = p.nombre.toLowerCase().includes(textoBusqueda);
+            const matchPrecio = isNaN(precioMaximo) || p.precio <= precioMaximo;
+
+            return matchCat && matchMarca && matchTexto && matchPrecio;
         });
 
         currentPage = 1;
         renderProductos();
-    });
+    };
+
+    btnFiltrar.addEventListener('click', aplicarFiltros);
+
+    if (inputBusqueda) {
+        inputBusqueda.addEventListener('input', aplicarFiltros);
+    }
+    if (inputPrecio) {
+        inputPrecio.addEventListener('input', aplicarFiltros);
+    }
+
+    selectCategoria.addEventListener('change', aplicarFiltros);
+    selectMarca.addEventListener('change', aplicarFiltros);
 
     renderProductos();
 });

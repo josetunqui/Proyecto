@@ -78,15 +78,24 @@
 
 .portadas img {
     position: absolute;
-    top: 0;
-    left: 0;
+    /* 1. Mueve el borde superior e izquierdo al centro */
+    top: 50%;
+    left: 50%;
+
+    /* 2. Desplaza la imagen sobre su propio eje para que el centro sea el centro real */
+    transform: translate(-50%, -50%);
+
     width: 100%;
-    height: auto;
+    height: 100%;
+    /* Cambia auto por 100% para que el contenedor mande */
     object-fit: cover;
+    /* Esto evita que se deforme al forzar el alto */
+
     opacity: 0;
     transition: opacity 1s ease-in-out;
     display: block;
 }
+
 
 .portadas img.active {
     opacity: 1;
@@ -192,11 +201,12 @@
 .video-wrapper:hover video {
     transform: scale(1.02);
 }
+
 .video-overlay {
-    position: absolute; /* Se coloca encima del video */
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centrado absoluto perfecto */
+    transform: translate(-50%, -50%);
     z-index: 2;
     color: white;
 }
@@ -240,95 +250,7 @@
     font-size: 1.2rem;
 }
 
-.carousel-grid {
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    align-items: center;
-    gap: 10px;
-    border-top: 1px solid #ccc;
-    padding-top: 30px;
-}
 
-.items-container {
-    display: flex;
-    gap: 15px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    width: 100%;
-}
-
-.items-container {
-    display: flex;
-    gap: 20px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    padding: 10px 0;
-    width: 100%;
-}
-
-.placeholder {
-    flex: 0 0 calc(25% - 15px);
-    background: #fff;
-    height: 420px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border: 1px solid #eee;
-    transition: transform 0.3s ease;
-}
-
-.placeholder:hover {
-    transform: translateY(-5px);
-}
-
-.product-img {
-    background: #f4f4f4;
-    height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.product-img img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.product-info {
-    padding: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.product-name {
-    font-size: 0.95rem;
-    color: #333;
-    font-weight: 600;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.product-price {
-    font-size: 1.2rem;
-    color: #5b6494;
-    font-weight: 800;
-}
-
-.nav-btn {
-    border: 1px solid #ccc;
-    background: #fff;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-}
 
 .bottom-bar {
     background: var(--footer-blue);
@@ -425,31 +347,15 @@
     color: #111;
 }
 
-@media (max-width: 900px) {
-    .items-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
-    .placeholder {
-        min-width: calc(50% - 8px);
-    }
-}
 
 @media (max-width: 600px) {
     .nav-links {
         display: none;
     }
 
-    .items-container {
-        grid-template-columns: 1fr;
-    }
-
     .grid-categories {
         grid-template-columns: 1fr;
-    }
-
-    .placeholder {
-        min-width: 100%;
     }
 
     .mercado-imagenes {
@@ -525,6 +431,7 @@
     margin-top: 20px;
     width: 100%;
 }
+
 .sidebar-banner img {
     width: 100%;
     border-radius: 10px;
@@ -552,9 +459,10 @@
     border: 1px solid #dcdcdc;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s;
 }
+
 .producto-card:hover {
     transform: translateY(-3px);
 }
@@ -565,7 +473,7 @@
     right: 10px;
     font-size: 0.7rem;
     color: #555;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.8);
     padding: 2px 5px;
     border-radius: 3px;
     letter-spacing: 1px;
@@ -651,12 +559,15 @@
     .productos-layout {
         grid-template-columns: 1fr;
     }
+
     .productos-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .btn-filtrar {
         width: 100%;
     }
+
     .sidebar-filtros {
         position: static;
     }
@@ -667,3 +578,12 @@
         grid-template-columns: 1fr;
     }
 }
+
+.transition-hover {
+    transition: transform 0.3s ease;
+}
+
+.transition-hover:hover {
+    transform: translateY(-5px);
+}
+

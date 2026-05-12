@@ -10,6 +10,8 @@
     <script type="module" src="js/productos-app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="imagenes/empresa/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
@@ -25,17 +27,25 @@
             </ul>
         </nav>
         <div class="search-container">
-            <input type="text" placeholder="Buscar...">
+            <input type="text" id="header-busqueda" placeholder="Buscar producto...">
             <i class="fa fa-search"></i>
         </div>
 
     </header>
 
     <section class="hero">
-        <div class="portadas">
-            <img src="imagenes/empresa/Portada.jpg" alt="Banner Principal 1">
-            <img src="imagenes/empresa/portada2.jpeg" alt="Banner Principal 2">
-            <img src="imagenes/empresa/portada3.png" alt="Banner Principal 3">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagenes/empresa/BannerP1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/empresa/bannerP2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/empresa/bannerP3.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
         </div>
     </section>
     <section class="Empreesa">
@@ -47,7 +57,7 @@
     <main class="wrapper productos-layout">
         <aside class="sidebar-filtros">
             <h2>FILTROS</h2>
-            
+
             <div class="filtro-grupo">
                 <h3>Categoría <i class="fa fa-hand-pointer" style="font-size: 0.8em;"></i></h3>
                 <select id="filtro-categoria">
@@ -62,77 +72,79 @@
                 </select>
             </div>
 
+            <div class="filtro-grupo">
+                <h3>Precio Máximo (S/)</h3>
+                <input type="number" id="filtro-precio" placeholder="S/ 0.00"
+                    style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+
             <button id="btn-filtrar" class="btn-filtrar">Filtrar</button>
 
             <div class="sidebar-banner">
-                <img src="imagenes/empresa/portada2.jpeg" alt="Banner promocional" onerror="this.src='imagenes/empresa/logo.png'">
+                <img src="imagenes/empresa/portada2.jpeg" alt="Banner promocional"
+                    onerror="this.src='imagenes/empresa/logo.png'">
             </div>
         </aside>
 
         <section class="productos-main">
             <div class="productos-grid" id="productos-grid">
-                <!-- Se llenará con JS -->
             </div>
-            
+
             <div class="paginacion" id="paginacion">
-                <!-- Se llenará con JS -->
             </div>
         </section>
     </main>
+    <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+        <div class="container">
+            <div class="row">
 
-    <footer class="bottom-bar">
+                <div class="col-md-4">
+                    <a href="https://class.utp.edu.pe/" target="_blank">
+                        <img src="imagenes/empresa/utp.png" alt="Logo UTP" class="img-fluid mb-3"
+                            style="max-width: 180px; background-color: white; padding: 10px; border-radius: 10px;">
+                    </a>
+                    <h5 class="text-uppercase mt-2 font-weight-bold text-info">Universidad Tecnológica del Perú</h5>
+                </div>
 
-        <section class="grid-categories">
-            <div class="card-profile">
-                <div class="img-container">
-                    <img src="imagenes/integrantes/jose.png" alt="Jose Tunqui">
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning border-bottom pb-2">Redes</h5>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank"><img src="imagenes/redes/ig.png"
+                                alt="Instagram"></a>
+                        <a href="https://facebook.com" target="_blank"><img src="imagenes/redes/Face.png"
+                                alt="Facebook"></a>
+                        <a href="https://x.com" target="_blank"><img src="imagenes/redes/X.png" alt="Twiter"></a>
+                    </div>
                 </div>
-                <div class="info-integrante">
-                    <h3>Jose Tunqui</h3>
-                    <p class="rol">Desarrollador Backend</p>
-                    <p class="desc">Estudiante de Ingeniería de Sistemas - VI Ciclo</p>
-                    <p class="desc">Especialista en </p>
-                </div>
-            </div>
 
-            <div class="card-profile">
-                <div class="img-container">
-                    <img src="imagenes/integrantes/dayana.jpeg" alt="Dayana Canelo">
-                </div>
-                <div class="info-integrante">
-                    <h3>Dayana Canelo</h3>
-                    <p class="rol">Diseño UI/UX</p>
-                    <p class="desc">Especialista en interfaces modernas y responsive</p>
-                </div>
-            </div>
-
-            <div class="card-profile">
-                <div class="img-container">
-                    <img src="imagenes/integrantes/jhon.jpeg" alt="Jhon Sulca">
-                </div>
-                <div class="info-integrante">
-                    <h3>Jhon SuLlca</h3>
-                    <p class="rol">Diseño UI/UX</p>
-                    <p class="desc">Especialista en interfaces modernas y responsive</p>
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-warning border-bottom pb-2">Aliados
+                    </h5>
+                    <p><strong>Guess</strong></p>
+                    <p><strong>Casio</strong></p>
+                    <p><strong>Michael Kors</strong></p>
                 </div>
             </div>
-        </section>
-        <div class="footer-bottom">
-            <div class="social-links">
-                <a href="https://instagram.com" target="_blank"><img src="imagenes/redes/ig.png" alt="Instagram"></a>
-                <a href="https://facebook.com" target="_blank"><img src="imagenes/redes/Face.png" alt="Facebook"></a>
-                <a href="https://x.com" target="_blank"><img src="imagenes/redes/X.png" alt="Twiter"></a>
-            </div>
 
-            <p class="copyright">ImportShop S.A.C &copy; 2026.</p>
-            <p class="rights-text">Todos los derechos reservados. Desarrollado por Alumnos de la UTP</p>
-            <br>
-            <div class="aliados">
-                <p>Michael Kors | Guess | Casio</p>
+            <hr class="my-4 border-light">
 
+            <div class="row align-items-center">
+                <div class="col-12 text-center">
+                    <p class="mb-0 text-secondary">Todos los derechos reservados &copy; 2026 | ImportShop S.A.C</p>
+                </div>
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+
 
 
 
