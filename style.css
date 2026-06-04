@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -76,8 +76,8 @@ body{
 
 
 
-@media (max-width: 600px){
-    .hero{
+@media (max-width: 600px) {
+    .hero {
         height: 180px;
     }
 }
@@ -351,8 +351,8 @@ body{
     transition: 0.3s;
 }
 
-.nav-btn:hover{
-    background:#eee;
+.nav-btn:hover {
+    background: #eee;
 }
 
 
@@ -395,7 +395,7 @@ body{
 
 /* FOOTER */
 
-.bottom-bar{
+.bottom-bar {
     background: #3e3d6d;
     width: 100%;
     padding: 30px 60px 10px;
@@ -405,7 +405,7 @@ body{
 
 /* CONTENEDOR */
 
-.footer-container{
+.footer-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -414,12 +414,12 @@ body{
 
 /* CAJAS */
 
-.footer-box{
+.footer-box {
     width: 220px;
     text-align: center;
 }
 
-.footer-box h2{
+.footer-box h2 {
     color: white;
     font-size: 22px;
     margin-bottom: 18px;
@@ -427,7 +427,7 @@ body{
 }
 
 .footer-box a,
-.footer-box p{
+.footer-box p {
     color: #ececec;
     text-decoration: none;
     display: block;
@@ -438,23 +438,23 @@ body{
 
 /* EFECTO */
 
-.footer-box a:hover{
+.footer-box a:hover {
     color: white;
     padding-left: 10px;
 }
 
 /* LINEAS */
 
-.linea{
+.linea {
     width: 1px;
     height: 90px;
-    background-color: rgba(255,255,255,0.35);
+    background-color: rgba(255, 255, 255, 0.35);
     margin-top: 49px;
 }
 
 /* REDES */
 
-.social-links{
+.social-links {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -462,20 +462,20 @@ body{
     margin-bottom: 15px;
 }
 
-.social-links img{
+.social-links img {
     width: 32px;
     height: 32px;
     object-fit: contain;
     transition: 0.3s;
 }
 
-.social-links img:hover{
+.social-links img:hover {
     transform: scale(1.1);
 }
 
 /* MARCAS */
 
-.aliados p{
+.aliados p {
     font-size: 14px;
     color: #f1f1f1;
     line-height: 1.5;
@@ -483,31 +483,32 @@ body{
 
 /* FINAL */
 
-.footer-bottom{
+.footer-bottom {
     text-align: center;
     margin-top: 20px;
     color: white;
 }
-.copyright{
+
+.copyright {
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
-.rights-text{
+.rights-text {
     font-size: 13px;
     color: #ececec;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .footer-container{
+    .footer-container {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
 
-    .linea{
+    .linea {
         display: none;
     }
 }
@@ -539,6 +540,7 @@ body{
     .nav-links {
         display: none;
     }
+
     .grid-categories {
         grid-template-columns: 1fr;
     }
@@ -770,4 +772,3 @@ body{
         grid-template-columns: 1fr;
     }
 }
-
