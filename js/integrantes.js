@@ -297,7 +297,7 @@ export const integrantes = [
         genero: "Masculino",
         pais: "Perú",
         carrera: "Ingeniería de sistemas e informática",
-        imagen: "imagenes/integrantes/jhon.png",
+        imagen: "imagenes/integrantes/jhon.jpg",
 
         contacto: {
             dni: "77706646",
