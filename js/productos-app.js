@@ -8,15 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const paginacion = document.getElementById('paginacion');
     const inputBusqueda = document.getElementById('header-busqueda');
     const inputPrecio = document.getElementById('filtro-precio');
-const modal = new bootstrap.Modal(document.getElementById('productoModal'));
 
-const modalImagen = document.getElementById('modalImagen');
-const modalNombre = document.getElementById('modalNombre');
-const modalId = document.getElementById('modalId');
-const modalMarca = document.getElementById('modalMarca');
-const modalPais = document.getElementById('modalPais');
-const modalCategoria = document.getElementById('modalCategoria');
-const modalPrecio = document.getElementById('modalPrecio');
     if (!grid) return;
 
     const ITEMS_PER_PAGE = 12;
@@ -69,20 +61,14 @@ const modalPrecio = document.getElementById('modalPrecio');
                 <div class="producto-precio">S/ ${producto.precio.toFixed(2)}</div>
             `;
             grid.appendChild(card);
+
             card.style.cursor = 'pointer';
 
-card.addEventListener('click', () => {
+            card.addEventListener('click', () => {
+                window.location.href = `detalleproducto.html?id=${producto.id}`;
+            });
 
-    modalImagen.src = producto.imagen;
-    modalNombre.textContent = producto.nombre;
-    modalId.textContent = formatId(producto.id);
-    modalMarca.textContent = producto.marca;
-    modalPais.textContent = producto.pais;
-    modalCategoria.textContent = producto.categoria;
-    modalPrecio.textContent = producto.precio.toFixed(2);
 
-    modal.show();
-});
         });
 
         renderPaginacion();

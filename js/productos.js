@@ -6,6 +6,7 @@ export const productos = [
         marca: "Wild Polo",
         pais: "USA",
         categoria: "Billeteras",
+        descripcion: "Billetera de cuero casual en color negro, perfecta para el uso diario. Con múltiples compartimentos para tarjetas y billetes, esta billetera combina estilo y funcionalidad.Su diseño compacto y elegante la convierte en un accesorio imprescindible para quienes buscan una opción práctica sin sacrificar el estilo.",
         imagen: "imagenes/productos/30/Billetera Casual Leather Black.png"
     },
     {
@@ -15,6 +16,7 @@ export const productos = [
         marca: "Calvin Klein",
         pais: "USA",
         categoria: "Billeteras",
+        descripcion: "Billetera clásica minimalista en color negro, ideal para un estilo moderno. Su diseño elegante y funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Billetera Classic Minimal Black.png"
     },
     {
@@ -24,6 +26,7 @@ export const productos = [
         marca: "Louis Vuitton",
         pais: "USA",
         categoria: "Billeteras",
+        descripcion: "Billetera clásica con monograma y cremallera en color negro, ideal para un estilo elegante. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Billetera Classic Monogram Zipper.png"
     },
     {
@@ -33,6 +36,7 @@ export const productos = [
         marca: "Guess",
         pais: "USA",
         categoria: "Billeteras",
+        descripcion: "Billetera elegante en color negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Billetera Elegant Black Style.png"
     },
     {
@@ -42,6 +46,7 @@ export const productos = [
         marca: "Coach",
         pais: "USA",
         categoria: "Billeteras",
+        descripcion: "Billetera premium de cuero clásica en color negro, ideal para un estilo elegante. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Billetera Premium Leather Classic.png"
     },
     {
@@ -51,6 +56,7 @@ export const productos = [
         marca: "Lacoste",
         pais: "USA",
         categoria: "Relojes",
+        descripcion: "Reloj elegante en color plata y azul, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Reloj Elegant Silver Blue.png"
     },
     {
@@ -60,6 +66,7 @@ export const productos = [
         marca: "Citizen",
         pais: "USA",
         categoria: "Relojes",
+        descripcion: "Reloj clásico en color verde y oro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Reloj Classic Green Gold.png"
     },
     {
@@ -69,6 +76,7 @@ export const productos = [
         marca: "Michael Kors",
         pais: "USA",
         categoria: "Relojes",
+        descripcion: "Reloj elegante en color oro y negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Reloj Elegance Gold Black.png"
     },
     {
@@ -78,6 +86,7 @@ export const productos = [
         marca: "Tommy Hilfiger",
         pais: "USA",
         categoria: "Relojes",
+        descripcion: "Reloj clásico de cuero en forma cuadrada, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Reloj Classic Square Leather.png"
     },
     {
@@ -87,6 +96,7 @@ export const productos = [
         marca: "Casio",
         pais: "USA",
         categoria: "Relojes",
+        descripcion: "Reloj clásico de acero en color negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Reloj Classic Steel Black.png"
     },
     {
@@ -96,6 +106,7 @@ export const productos = [
         marca: "Tommy Hilfiger",
         pais: "USA",
         categoria: "Relojes",
+        descripcion: "Reloj premium en color oro y azul, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Reloj Premium Gold Blue.png"
     },
     {
@@ -105,6 +116,7 @@ export const productos = [
         marca: "Tommy Hilfiger",
         pais: "USA",
         categoria: "Relojes",
+        descripcion: "Reloj clásico de cuero en color oro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Reloj Classic Leather Gold.png"
     },
     {
@@ -114,6 +126,7 @@ export const productos = [
         marca: "Louis Vuitton",
         pais: "USA",
         categoria: "Mochilas",
+        descripcion: "Mochila clásica en estilo cuadriculado, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Mochila Classic Checkered Style.png"
     },
     {
@@ -123,6 +136,7 @@ export const productos = [
         marca: "Lacoste",
         pais: "USA",
         categoria: "Mochilas",
+        descripcion: "Mochila urbana casual en color negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Mochila Urban Casual Black.png"
     },
     {
@@ -132,6 +146,7 @@ export const productos = [
         marca: "Louis Vuitton",
         pais: "USA",
         categoria: "Mochilas",
+        descripcion: "Mochila minimal en color negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Mochila Minimal Black Style.png"
     },
     {
@@ -141,6 +156,7 @@ export const productos = [
         marca: "Tommy Hilfiger",
         pais: "USA",
         categoria: "Mochilas",
+        descripcion: "Mochila elegante en color negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Mochila Elegant Black Premium.png"
     },
     {
@@ -150,6 +166,7 @@ export const productos = [
         marca: "Michael Kors",
         pais: "USA",
         categoria: "Mochilas",
+        descripcion: "Mochila signature en color blanco y azul, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Mochila Signature White Blue.png"
     },
     {
@@ -159,6 +176,7 @@ export const productos = [
         marca: "Michael Kors",
         pais: "USA",
         categoria: "Mochilas",
+        descripcion: "Mochila clásica en color marrón, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Mochila Classic Brown Signature.png"
     },
     {
@@ -168,6 +186,7 @@ export const productos = [
         marca: "Polo Ralph Lauren",
         pais: "USA",
         categoria: "Correas",
+        descripcion: "Correa automática de lujo en color negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Correa Automática Luxury Black.png"
     },
     {
@@ -177,6 +196,7 @@ export const productos = [
         marca: "Levi’s",
         pais: "USA",
         categoria: "Correas",
+        descripcion: "Correa casual en color marrón oscuro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Correa Casual Dark Brown.png"
     },
     {
@@ -186,6 +206,7 @@ export const productos = [
         marca: "Lacoste",
         pais: "USA",
         categoria: "Correas",
+        descripcion: "Correa de cuero clásica en color negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Correa Leather Classic Black.png"
     },
     {
@@ -195,6 +216,7 @@ export const productos = [
         marca: "Calvin Klein",
         pais: "USA",
         categoria: "Correas",
+        descripcion: "Correa premium en estilo CK, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Correa Premium CK Style.png"
     },
     {
@@ -204,6 +226,7 @@ export const productos = [
         marca: "Celine",
         pais: "USA",
         categoria: "Correas",
+        descripcion: "Correa elegante con hebilla de oro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Correa Elegance Gold Buckle.png"
     },
     {
@@ -213,6 +236,7 @@ export const productos = [
         marca: "Gucci",
         pais: "USA",
         categoria: "Correas",
+        descripcion: "Correa de lujo con doble G, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Correa Luxury Double G.png"
     },
     {
@@ -222,6 +246,7 @@ export const productos = [
         marca: "Prada",
         pais: "USA",
         categoria: "Correas",
+        descripcion: "Correa premium con logo triangular, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Correa Premium Triangle Logo.png"
     },
     {
@@ -231,6 +256,7 @@ export const productos = [
         marca: "Calvin Klein",
         pais: "USA",
         categoria: "Morrales",
+        descripcion: "Morral compacto en estilo urbano, ideal para un estilo moderno. Su diseño funcional lo convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Morral Compact Street Style.png"
     },
     {
@@ -240,6 +266,7 @@ export const productos = [
         marca: "Lacoste",
         pais: "USA",
         categoria: "Morrales",
+        descripcion: "Morral deportivo minimalista en color negro, ideal para un estilo moderno. Su diseño funcional lo convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Morral Sport Minimal Black.png"
     },
     {
@@ -249,6 +276,7 @@ export const productos = [
         marca: "Tommy Hilfiger",
         pais: "USA",
         categoria: "Morrales",
+        descripcion: "Morral clásico con tiras de cuero, ideal para un estilo moderno. Su diseño funcional lo convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Morral Classic Leather Strap.png"
     },
     {
@@ -258,6 +286,7 @@ export const productos = [
         marca: "Aldo",
         pais: "USA",
         categoria: "Morrales",
+        descripcion: "Morral casual en color negro, ideal para un estilo moderno. Su diseño funcional lo convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Morral Casual Black Urban.png"
     },
     {
@@ -267,6 +296,7 @@ export const productos = [
         marca: "Gucci",
         pais: "USA",
         categoria: "Carteras",
+        descripcion: "Cartera de hombro con franjas web, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Cartera Shoulder Web Stripe.png"
     },
     {
@@ -276,6 +306,7 @@ export const productos = [
         marca: "Gucci",
         pais: "USA",
         categoria: "Carteras",
+        descripcion: "Cartera de hombro clásica con monograma, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Cartera Shoulder Classic Monogram.png"
     },
     {
@@ -285,6 +316,7 @@ export const productos = [
         marca: "Yves Saint Laurent",
         pais: "USA",
         categoria: "Carteras",
+        descripcion: "Cartera de hombro en color rojo, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Cartera Shoulder Red Elegance.png"
     },
     {
@@ -294,6 +326,7 @@ export const productos = [
         marca: "Prada",
         pais: "USA",
         categoria: "Carteras",
+        descripcion: "Cartera de lujo en color negro, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Cartera Luxury Black Classic.png"
     },
     {
@@ -303,6 +336,7 @@ export const productos = [
         marca: "Michael Kors",
         pais: "USA",
         categoria: "Carteras",
+        descripcion: "Cartera clásica en color beige, ideal para un estilo moderno. Su diseño funcional la convierte en un accesorio indispensable para quienes buscan simplicidad sin renunciar al estilo.",
         imagen: "imagenes/productos/30/Cartera Classic Elegance Beige.png"
     }
 ];
