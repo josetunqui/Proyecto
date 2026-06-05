@@ -292,7 +292,7 @@ export const integrantes = [
     {
         id: 3,
         nombre: "Jhon",
-        apellido: "Sulca Rodriguez",
+        apellido: "Sullca Aparco",
         edad: 23,
         genero: "Masculino",
         pais: "Perú",
@@ -300,12 +300,12 @@ export const integrantes = [
         imagen: "imagenes/integrantes/jhon.png",
 
         contacto: {
-            dni: "",
+            dni: "77706646",
             telefono: "+51 924 203 783",
-            correo: "canelodayanna@gmail.com",
-            correoeducativo: "U000000@utp.edu.pe",
-            linkedin: "",
-            direccion: ""
+            correo: "jhonsullca2003@gmail.com",
+            correoeducativo: "U23330233@utp.edu.pe",
+            linkedin: "www.linkedin.com/in/jhon-antony-sullca-aparco-896526328",
+            direccion: "mz,b 23 heroes de cenepa-VES"
         },
 
         resena: "Soy estudiante de Ingeniería de Sistemas de la Universidad Tecnológica del Perú (UTP), con interés en redes informáticas, diseño de interfaces UX/UI y desarrollo web. Poseo conocimientos en programación, bases de datos y herramientas digitales adquiridos durante mi formación académica. Además, tengo experiencia académica en el diseño de wireframes y prototipos utilizando Figma para el desarrollo de soluciones centradas en el usuario. Me caracterizo por ser una persona responsable, organizada y comprometida con el aprendizaje continuo.",
@@ -416,11 +416,11 @@ export const integrantes = [
 
         certificaciones: [
             {
-                nombre: "Enterprise Design Thinking Practitioner",
+                nombre: "Fundamentos de Ethical Hacking",
                 emisor: "IBM SkillsBuild",
-                año: 2025,
-                fechaEmision: "23 AUG 2025",
-                verificacion: "https://www.credly.com/go/h8zZC0yp"
+                año: 2024,
+                fechaEmision: "31 JUN 2024",
+                verificacion: "https://raw.githubusercontent.com/fconislla/certificados/main/hacking/jhonsullca2003@gmail.com.pdf"
             }
         ],
 
