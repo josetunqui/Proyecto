@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="text-muted small mb-3 text-uppercase">${integrante.carrera}<br>${integrante.estudios?.ciclo || ''}</p>
 
                     <div class="text-start mb-4 text-muted small">
-                        <p class="mb-1"><i class="fa fa-envelope me-2" style="color: #3e3d6d;"></i>
+                        <p class="mb-1"><i class="fa fa-envelope me-2" style="color: #3d6d49;"></i>
                             ${integrante.contacto?.correoeducativo || integrante.contacto?.correo || 'No especificado'}</p>
                         <p class="mb-0"><i class="fa fa-map-marker-alt me-2 text-danger"></i> ${integrante.pais || 'Perú'}</p>
                     </div>

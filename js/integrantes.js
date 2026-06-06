@@ -308,7 +308,7 @@ export const integrantes = [
             direccion: "mz,b 23 heroes de cenepa-VES"
         },
 
-        resena: "Soy estudiante de Ingeniería de Sistemas de la Universidad Tecnológica del Perú (UTP), con interés en redes informáticas, diseño de interfaces UX/UI y desarrollo web. Poseo conocimientos en programación, bases de datos y herramientas digitales adquiridos durante mi formación académica. Además, tengo experiencia académica en el diseño de wireframes y prototipos utilizando Figma para el desarrollo de soluciones centradas en el usuario. Me caracterizo por ser una persona responsable, organizada y comprometida con el aprendizaje continuo.",
+        resena: "Soy un estudiante en Ingeniería de Sistemas e Informática, con conocimientos en herramientas digitales, programación y desarrollo web. Me destaco por mi responsabilidad, compromiso y habilidades de comunicación efectiva. Busco oportunidades para aplicar mis conocimientos y seguir aprendiendo en el campo de la tecnología.",
 
         estudios: {
             universidad: "Universidad tecnológica del Perú",
@@ -345,8 +345,11 @@ export const integrantes = [
 
         habilidades: [
             "Trabajo en equipo.",
+            "Liderazgo.",
             "Responsabilidad y compromiso.",
+            "Pensamiento crítico.",
             "Comunicación efectiva.",
+            "Empatía.",
             "Adaptabilidad y aprendizaje continuo.",
             "Organización y planificación.",
             "Resolución de problemas."
@@ -356,21 +359,41 @@ export const integrantes = [
             {
                 idioma: "Ingles",
                 nivel: "Nivel básico",
-                institucion: ""
+                institucion: "UTP"
             }
         ],
 
-        conocimientosComputacion: [],
+        conocimientosComputacion: [
+            "Microsoft Office (Word, Excel y PowerPoint)",
+            "Uso de Inteligencia artificial a nivel usuario",
+            "Uso de herramientas de Inteligencia Artificial",
+            "Google Drive y herramientas colaborativas."
+        ],
 
 
         lenguajesdeprogramacion: [
             {
-                idioma: "java",
+                idioma: "JavaScript",
                 nivel: "Intermedio",
                 institucion: "UTP"
             },
             {
-                idioma: "JavaScritp",
+                idioma: "Html",
+                nivel: "Intermedio",
+                institucion: "UTP"
+            },
+            {
+                idioma: "NoSQL",
+                nivel: "Basico",
+                institucion: "UTP"
+            },
+            {
+                idioma: "CSS",
+                nivel: "Intermedio",
+                institucion: "UTP"
+            },
+            {
+                idioma: "java",
                 nivel: "Intermedio",
                 institucion: "UTP"
             },
@@ -385,29 +408,16 @@ export const integrantes = [
                 institucion: "UTP"
             },
             {
-                idioma: "Html",
-                nivel: "Intermedio",
-                institucion: "UTP"
-            },
-            {
-                idioma: "CSS",
-                nivel: "Intermedio",
-                institucion: "UTP"
-            },
-            {
                 idioma: "SQL",
                 nivel: "Intermedio",
-                institucion: "UTP"
-            },
-            {
-                idioma: "NoSQL",
-                nivel: "Basico",
                 institucion: "UTP"
             }
         ],
 
         areasInteres: [
             "Redes y Comunicaciones.",
+            "Seguridad Informática.",
+            "Administración de Sistemas.",
             "Diseño de Interfaces UX/UI.",
             "Diseño de Wireframes y Prototipos Digitales.",
             "Desarrollo Web.",
