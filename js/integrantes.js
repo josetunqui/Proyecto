@@ -170,7 +170,7 @@ export const integrantes = [
             dni: "",
             telefono: "+51 924 203 783",
             correo: "canelodayanna@gmail.com",
-            correoeducativo: "U000000@utp.edu.pe",
+            correoeducativo: "U23226709@utp.edu.pe",
             linkedin: "",
             direccion: ""
         },
