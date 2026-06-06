@@ -8,6 +8,7 @@ export const integrantes = [
         pais: "Perú",
         carrera: "Ingeniería de sistemas e informática",
         imagen: "imagenes/integrantes/jose.png",
+        cv: "cv/CV-JOSETUNQUI.pdf",
 
         contacto: {
             dni: "70978763",
@@ -161,12 +162,15 @@ export const integrantes = [
         pais: "Perú",
         carrera: "Ingeniería de sistemas e informática",
         imagen: "imagenes/integrantes/dayana.png",
+        cv: "cv/CV-DAYANNACANELO.pdf",
+
+
 
         contacto: {
             dni: "",
             telefono: "+51 924 203 783",
             correo: "canelodayanna@gmail.com",
-            correoeducativo: "U000000@utp.edu.pe",
+            correoeducativo: "U23226709@utp.edu.pe",
             linkedin: "",
             direccion: ""
         },
