@@ -8,6 +8,7 @@ export const integrantes = [
         pais: "Perú",
         carrera: "Ingeniería de sistemas e informática",
         imagen: "imagenes/integrantes/jose.png",
+        cv: "cv/CV-JOSETUNQUI.pdf",
 
         contacto: {
             dni: "70978763",
@@ -161,6 +162,9 @@ export const integrantes = [
         pais: "Perú",
         carrera: "Ingeniería de sistemas e informática",
         imagen: "imagenes/integrantes/dayana.png",
+        cv: "cv/CV-DAYANNACANELO.pdf",
+
+
 
         contacto: {
             dni: "",
