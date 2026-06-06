@@ -302,6 +302,7 @@ export const integrantes = [
         pais: "Perú",
         carrera: "Ingeniería de sistemas e informática",
         imagen: "imagenes/integrantes/jhon.jpg",
+        cv: "cv/CV-JHONSULLCA.pdf",
 
         contacto: {
             dni: "77706646",
