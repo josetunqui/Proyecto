@@ -409,16 +409,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 60px;
+    gap: 35px;
+    flex-wrap: nowrap;
 }
 
-/* CAJAS */
-
 .footer-box {
-    width: 220px;
+    width: 180px;
     text-align: center;
 }
 
+.payment-links img {
+    width: 160px;
+    height: auto;
+}
 .footer-box h2 {
     color: white;
     font-size: 22px;
@@ -449,7 +452,7 @@ body {
     width: 1px;
     height: 90px;
     background-color: rgba(255, 255, 255, 0.35);
-    margin-top: 49px;
+    margin-top: 45px;
 }
 
 /* REDES */
@@ -512,7 +515,6 @@ body {
         display: none;
     }
 }
-
 
 
 
