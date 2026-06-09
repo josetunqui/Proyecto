@@ -142,7 +142,22 @@ export const integrantes = [
 
         areasInteres: [],
 
-        certificaciones: [],
+        certificaciones: [
+            {
+                nombre: "Introducción a Ciberseguridad",
+                emisor: "Cisco Networking Academy",
+                año: 2026,
+                fechaEmision: "10/03/2026",
+                verificacion: "https://www.credly.com/go/46be66c7-110b-46be-bb95-4c2c7ad80a93"
+            },
+            {
+                nombre: "Endpoint Security",
+                emisor: "Cisco Networking Academy",
+                año: 2026,
+                fechaEmision: "15/05/2026",
+                verificacion: "https://www.credly.com/earner/earned/badge/c25a8234-ecc9-4478-847a-e2090179a129"
+            }
+        ],
 
         referenciasPersonales: [
             {
