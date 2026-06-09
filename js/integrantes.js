@@ -148,7 +148,7 @@ export const integrantes = [
                 emisor: "Cisco Networking Academy",
                 año: 2026,
                 fechaEmision: "10/03/2026",
-                verificacion: "https://www.credly.com/go/46be66c7-110b-46be-bb95-4c2c7ad80a93"
+                verificacion: "https://www.credly.com/earner/earned/badge/a1e59a6f-8c9e-4054-8d51-753142c324ce"
             },
             {
                 nombre: "Endpoint Security",
