@@ -1,4 +1,5 @@
 import { productos } from "./productos.js";
+import { addToCart } from "./cart.js";
 
 const params = new URLSearchParams(window.location.search);
 const id = parseInt(params.get("id"));
@@ -106,3 +107,11 @@ document.getElementById("btnMenos").addEventListener("click", () => {
         cantidad.value = parseInt(cantidad.value) - 1;
     }
 });
+
+const btnCesta = document.querySelector(".btn-cesta");
+if(btnCesta) {
+    btnCesta.addEventListener("click", () => {
+        const cant = parseInt(cantidad.value);
+        addToCart(producto, cant);
+    });
+}

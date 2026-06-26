@@ -25,6 +25,10 @@
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contactos.html">Contactos</a></li>
             </ul>
+            <div class="cart-icon-container">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
         </nav>
         <div class="search-container">
             <input type="text" id="header-busqueda" placeholder="Buscar producto...">
@@ -141,9 +145,10 @@
         </div>
     </footer>
 
-
-
-
+    <script type="module">
+        import { initCart } from './js/cart.js';
+        initCart();
+    </script>
 </body>
 
 </html>

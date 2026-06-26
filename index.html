@@ -22,6 +22,10 @@
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contactos.html">Contactos</a></li>
             </ul>
+            <div class="cart-icon-container">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
         </nav>
 
 
@@ -219,4 +223,8 @@
             <p class="rights-text">Todos los derechos reservados. Desarrollado por Alumnos de la UTP</p>
         </div>
     </footer>
+    <script type="module">
+        import { initCart } from './js/cart.js';
+        initCart();
+    </script>
 </body>

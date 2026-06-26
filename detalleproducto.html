@@ -28,6 +28,10 @@
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contactos.html">Contactos</a></li>
             </ul>
+            <div class="cart-icon-container">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
         </nav>
     </header>
 
@@ -105,6 +109,10 @@
     </footer>
 
     <script type="module" src="js/detalle-producto.js"></script>
+    <script type="module">
+        import { initCart } from './js/cart.js';
+        initCart();
+    </script>
 </body>
 
 </html>
