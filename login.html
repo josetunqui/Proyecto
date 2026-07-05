@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión - ImportShop S.A.C.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="imagenes/empresa/icono.png">
+  <script type="module" src="js/auth.js"></script>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="nav-container">
+      <img src="imagenes/empresa/logo1.png" alt="Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+     
+      <div class="header-actions">
+        <a href="login.html" class="login-link"><i class="fa-solid fa-circle-user"></i> Iniciar sesión</a>
+          <div class="header-divider"></div>
+        <div class="cart-icon-container"><i class="fa fa-shopping-cart"></i><span class="cart-count">0</span></div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="auth-page">
+    <section class="auth-card">
+      <div class="auth-brand">
+        <img src="imagenes/empresa/logo1.png" alt="ImportShop">
+        <h1>Bienvenido a ImportShop</h1>
+        <p>Inicia sesión o crea una cuenta para continuar con tu compra.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-target="form-login">Iniciar sesión</button>
+        <button class="auth-tab" data-target="form-register">Registrarse</button>
+      </div>
+
+      <form id="form-login" class="auth-form active">
+        <label>Correo electrónico</label>
+        <input type="email" id="login-correo" placeholder="importshop@gmail.com" required>
+        <label>Contraseña</label>
+        <input type="password" id="login-password" placeholder="Ingresa tu contraseña" required>
+        <button type="submit" class="auth-btn">Ingresar</button>
+      </form>
+
+      <form id="form-register" class="auth-form">
+        <label>Nombre completo</label>
+        <input type="text" id="reg-nombre" placeholder="Escribe tu nombre" required>
+        <label>Correo electrónico</label>
+        <input type="email" id="reg-correo" placeholder="correo@gmail.com" required>
+        <label>Contraseña</label>
+        <input type="password" id="reg-password" placeholder="Crea una contraseña" required minlength="4">
+        <button type="submit" class="auth-btn">Crear cuenta</button>
+      </form>
+
+      <p id="auth-message" class="auth-message"></p>
+    </section>
+  </main>
+</body>
+</html>
