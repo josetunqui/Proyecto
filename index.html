@@ -7,6 +7,7 @@
     <title>ImportShop S.A.C.</title>
     <link rel="stylesheet" href="style.css">
     <script src="js/script.js"></script>
+    <script type="module" src="js/auth.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="imagenes/empresa/icono.png">
 </head>
@@ -22,9 +23,13 @@
                 <li><a href="nosotros.html">Nosotros</a></li>
                 <li><a href="contactos.html">Contactos</a></li>
             </ul>
-            <div class="cart-icon-container">
-                <i class="fa fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
+            <div class="header-actions">
+                <a href="login.html" class="login-link"><i class="fa-solid fa-circle-user"></i> Iniciar sesión</a>
+                <div class="header-divider"></div>
+                <div class="cart-icon-container">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
             </div>
         </nav>
 
@@ -39,14 +44,23 @@
         </div>
     </section>
 
-    <main class="wrapper">
-        <section class="Empreesa">
-            <div class="info-empresa">
-                <p>En ImportShop S.A.C. nos dedicamos a importar productos originales de marcas reconocidas desde
-                    Estados
-                    Unidos, ofreciendo accesorios modernos que combinan estilo, calidad y confianza en cada detalle</p>
+  <main class="wrapper">
+        <div class="info-empresa-box">
+            <div class="info-texto">
+                <p>
+                    Ofrecemos accesorios modernos para hombres y mujeres, combinando calidad, diseño y precios
+                    accesibles para brindar una experiencia de compra única.
+                </p>
             </div>
-        </section>
+
+            <div class="info-imagen">
+                <img src="imagenes/InfoE.png" alt="Accesorios ImportShop">
+            </div>
+        </div>
+
+
+
+
         <section class="grid-categories">
             <div class="card">
                 <span class="tag">Carteras</span>
@@ -138,14 +152,7 @@
 
                     <video src="videos/VP.mp4" controls poster="imagenes/empresa/caratulaV.png">
                     </video>
-
-                </div>
-
-                <div class="presentacion-info">
-                    <h2>Nuestra Propuesta</h2>
-                    <p>Conoce más sobre nuestra marca.</p>
-                </div>
-
+                </div> 
             </div>
 
 
