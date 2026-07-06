@@ -160,7 +160,13 @@ export const initCart = () => {
 
     const simulatePurchase = () => {
         const cart = getCart();
+        const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo'));
         if(cart.length === 0) return;
+        if(!usuarioActivo) {
+            alert('Para continuar con la compra debes iniciar sesión o registrarte.');
+            window.location.href = 'login.html';
+            return;
+        }
         
         closeCart();
         checkoutModal.classList.add('open');
