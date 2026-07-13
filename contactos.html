@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,24 +17,28 @@
             text-align: center;
             margin: 40px 0 20px;
         }
+
         .contact-header h1 {
             font-family: 'Times New Roman', Times, serif;
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 10px;
         }
+
         .contact-header p {
             font-size: 1.2rem;
             color: #333;
         }
+
         .banner-contact {
             width: 100%;
             height: 350px;
             object-fit: cover;
             margin-bottom: 40px;
         }
-        
-        .opinion-card, .info-card {
+
+        .opinion-card,
+        .info-card {
             background-color: #f5f5f5;
             border-radius: 8px;
             padding: 30px;
@@ -41,7 +46,8 @@
             border: 1px solid #ddd;
         }
 
-        .opinion-card h3, .info-card h3 {
+        .opinion-card h3,
+        .info-card h3 {
             font-family: 'Oswald', 'Impact', sans-serif;
             font-weight: bold;
             font-size: 1.6rem;
@@ -50,7 +56,8 @@
             letter-spacing: -0.5px;
         }
 
-        .opinion-card > p, .info-card > p {
+        .opinion-card>p,
+        .info-card>p {
             font-family: 'Courier New', Courier, monospace;
             font-size: 0.95rem;
             color: #111;
@@ -87,6 +94,7 @@
             margin-top: 15px;
             transition: background 0.3s;
         }
+
         .btn-enviar:hover {
             background-color: #5c6ab1;
         }
@@ -98,8 +106,9 @@
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
+
         .info-icon {
             width: 45px;
             height: 45px;
@@ -112,11 +121,26 @@
             margin-right: 15px;
             flex-shrink: 0;
         }
-        .icon-mail { background-color: #4a6fa5; }
-        .icon-whatsapp { background-color: #25d366; }
-        .icon-phone { background-color: #4a6fa5; }
-        .icon-clock { background-color: #4a6fa5; }
-        .icon-store { background-color: #4a6fa5; }
+
+        .icon-mail {
+            background-color: #4a6fa5;
+        }
+
+        .icon-whatsapp {
+            background-color: #25d366;
+        }
+
+        .icon-phone {
+            background-color: #4a6fa5;
+        }
+
+        .icon-clock {
+            background-color: #4a6fa5;
+        }
+
+        .icon-store {
+            background-color: #4a6fa5;
+        }
 
         .info-text h4 {
             margin: 0 0 5px 0;
@@ -124,12 +148,14 @@
             font-weight: bold;
             color: #111;
         }
+
         .info-text p {
             margin: 0;
             font-size: 0.8rem;
             color: #555;
             line-height: 1.2;
         }
+
         .info-link {
             margin-left: auto;
             color: #4a6fa5;
@@ -138,6 +164,7 @@
             font-size: 0.85rem;
             white-space: nowrap;
         }
+
         .info-link-chevron {
             color: #888;
             font-size: 1.2rem;
@@ -149,6 +176,7 @@
             margin-bottom: 50px;
             margin-top: 50px;
         }
+
         .reviews-section h2 {
             font-family: 'Oswald', 'Impact', sans-serif;
             font-weight: bold;
@@ -160,17 +188,19 @@
             background: #f8f9fa;
             border-radius: 10px;
             padding: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: left;
             height: 100%;
             border: 1px solid #eaeaea;
         }
+
         .review-header {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
             justify-content: center;
         }
+
         .review-avatar {
             width: 45px;
             height: 45px;
@@ -179,10 +209,12 @@
             object-fit: cover;
             background: #ccc;
         }
+
         .review-stars {
             color: #ffc107;
             font-size: 1rem;
         }
+
         .review-text {
             font-size: 0.85rem;
             color: #333;
@@ -194,6 +226,7 @@
             text-align: center;
             margin-bottom: 50px;
         }
+
         .store-section h3 {
             font-weight: bold;
             text-transform: uppercase;
@@ -202,6 +235,7 @@
             margin-bottom: 10px;
             font-family: 'Oswald', 'Impact', sans-serif;
         }
+
         .store-section h2 {
             font-family: 'Courier New', Courier, monospace;
             font-size: 1.3rem;
@@ -209,20 +243,23 @@
             margin-bottom: 30px;
             color: #111;
         }
+
         .map-container {
             position: relative;
             width: 100%;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             border: 1px solid #ddd;
         }
+
         .map-image {
             width: 100%;
             display: block;
         }
     </style>
 </head>
+
 <body>
 
     <header class="main-header">
@@ -258,13 +295,15 @@
                 <div class="opinion-card">
                     <h3>Opiniones De Nuestros Clientes</h3>
                     <p>Tu opinión es muy importante para nosotros. ¿Cómo fue tu experiencia en nuestra sucursal?</p>
-                    
+
                     <form>
                         <input type="text" class="form-control-custom" placeholder="Nombre completo">
                         <input type="email" class="form-control-custom" placeholder="Correo Electrónico">
-                        
+
                         <div class="mb-3 mt-3">
-                            <label class="form-label fw-bold d-block mb-1" style="font-family: 'Courier New', Courier, monospace; font-size: 1rem;">Tu Calificación:</label>
+                            <label class="form-label fw-bold d-block mb-1"
+                                style="font-family: 'Courier New', Courier, monospace; font-size: 1rem;">Tu
+                                Calificación:</label>
                             <div class="star-rating">
                                 <i class="fa-regular fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
@@ -275,7 +314,7 @@
                         </div>
 
                         <textarea class="form-control-custom" rows="4" placeholder="Déjanos tu Opinión..."></textarea>
-                        
+
                         <button type="button" class="btn-enviar">Enviar opinión</button>
                     </form>
                 </div>
@@ -343,45 +382,61 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="review-card">
                         <div class="review-header">
-                            <img src="https://ui-avatars.com/api/?name=User&background=6c757d&color=fff" alt="User 1" class="review-avatar">
+                            <img src="https://ui-avatars.com/api/?name=User&background=6c757d&color=fff" alt="User 1"
+                                class="review-avatar">
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <p class="review-text text-center">Excelente servicio. La compra en Lima fue rápida y los productos son de muy buena calidad.</p>
+                        <p class="review-text text-center">Excelente servicio. La compra en Lima fue rápida y los
+                            productos son de muy buena calidad.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="review-card">
                         <div class="review-header">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User 2" class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User 2"
+                                class="review-avatar">
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <p class="review-text text-center">Me encantó la compra. La atención al cliente es fantástica y tienen mucha variedad.</p>
+                        <p class="review-text text-center">Me encantó la compra. La atención al cliente es fantástica y
+                            tienen mucha variedad.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="review-card">
                         <div class="review-header">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User 3" class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User 3"
+                                class="review-avatar">
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <p class="review-text text-center">Muy buena solución a mis dudas antes de la compra. Definitivamente volveré a comprar aquí.</p>
+                        <p class="review-text text-center">Muy buena solución a mis dudas antes de la compra.
+                            Definitivamente volveré a comprar aquí.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="review-card">
                         <div class="review-header">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User 4" class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User 4"
+                                class="review-avatar">
                             <div class="review-stars">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
                             </div>
                         </div>
-                        <p class="review-text text-center">Recomiendo que compren aquí. El recojo en tienda fue súper rápido y el personal muy amable.</p>
+                        <p class="review-text text-center">Recomiendo que compren aquí. El recojo en tienda fue súper
+                            rápido y el personal muy amable.</p>
                     </div>
                 </div>
             </div>
@@ -391,7 +446,10 @@
             <h3>NUESTRA SUCURSAL</h3>
             <h2>Visitanos directamente en nuestra tienda fisica y recibe<br>atención personalizada</h2>
             <div class="map-container">
-                <img src="imagenes/Mapa (2).png" alt="Mapa de Sucursal" class="map-image">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1362.3689668141214!2d-76.97137371922086!3d-12.193808870162528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9a26836ac01%3A0x4fd233c0d43ca479!2sUniversidad%20Tecnol%C3%B3gica%20del%20Per%C3%BA%20UTP!5e1!3m2!1ses!2spe!4v1783959224498!5m2!1ses!2spe"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
         </div>
 
@@ -417,8 +475,10 @@
             <div class="footer-box">
                 <h2>Síguenos</h2>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/" target="_blank"><img src="imagenes/redes/ig.png" alt="Instagram"></a>
-                    <a href="https://www.facebook.com/" target="_blank"><img src="imagenes/redes/Face.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="imagenes/redes/ig.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="imagenes/redes/Face.png"
+                            alt="Facebook"></a>
                     <a href="https://x.com/" target="_blank"><img src="imagenes/redes/X.png" alt="X"></a>
                 </div>
                 <div class="aliados">
@@ -444,4 +504,5 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
