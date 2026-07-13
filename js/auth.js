@@ -8,7 +8,8 @@ if (getUsers().length === 0) {
   setUsers([{
     nombre: "Administrador",
     correo: "admin@importshop.com",
-    password: "123"
+    password: "123",
+    rol: "admin"
   }]);
 }
 
@@ -16,16 +17,16 @@ function updateHeaderUser() {
   const user = getUser();
   document.querySelectorAll('.login-link').forEach(link => {
     if (user) {
-      link.innerHTML = `<i class="fa-solid fa-circle-user"></i> ${user.nombre.split(' ')[0]}`;
-      link.href = '#';
-      link.title = 'Cerrar sesión';
-      link.onclick = (e) => {
-        e.preventDefault();
-        if (confirm('¿Deseas cerrar sesión?')) {
-          localStorage.removeItem('usuarioActivo');
-          location.reload();
-        }
-      };
+      if (user.rol === 'admin') {
+        link.innerHTML = `<i class="fa-solid fa-screwdriver-wrench"></i> Panel Admin`;
+        link.href = 'admin.html';
+        link.title = 'Ir al Panel de Administración';
+      } else {
+        link.innerHTML = `<i class="fa-solid fa-circle-user"></i> Mi Perfil`;
+        link.href = 'perfil.html';
+        link.title = 'Ir a mi perfil';
+      }
+      link.onclick = null;
     } else {
       link.innerHTML = `<i class="fa-solid fa-circle-user"></i> Iniciar sesión`;
       link.href = 'login.html';
@@ -71,13 +72,13 @@ function initLoginPage() {
       return;
     }
 
-    const newUser = { nombre, correo, password };
+    const newUser = { nombre, correo, password, rol: 'usuario' };
     users.push(newUser);
     setUsers(users);
-    setUser({ nombre, correo });
+    setUser({ nombre, correo, rol: 'usuario' });
     msg.textContent = 'Registro exitoso. Redirigiendo...';
     msg.className = 'auth-message success';
-    setTimeout(() => window.location.href = 'admin.html', 1200);
+    setTimeout(() => window.location.href = 'perfil.html', 1200);
   });
 
   loginForm?.addEventListener('submit', (e) => {
@@ -92,10 +93,13 @@ function initLoginPage() {
       return;
     }
 
-    setUser({ nombre: user.nombre, correo: user.correo });
+    setUser({ nombre: user.nombre, correo: user.correo, rol: user.rol || 'usuario' });
     msg.textContent = 'Bienvenido/a';
     msg.className = 'auth-message success';
-    setTimeout(() => window.location.href = 'admin.html', 1000);
+    setTimeout(() => {
+        if(user.rol === 'admin') window.location.href = 'admin.html';
+        else window.location.href = 'perfil.html';
+    }, 1000);
   });
 }
 

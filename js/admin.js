@@ -3,9 +3,21 @@ import { categorias, saveCategorias } from './categorias.js';
 import { getUser } from './auth.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (!getUser()) {
-        window.location.href = 'login.html';
+    const user = getUser();
+    if (!user || user.rol !== 'admin') {
+        window.location.href = 'index.html';
         return;
+    }
+
+    const btnLogoutAdmin = document.getElementById('btn-logout-admin');
+    if (btnLogoutAdmin) {
+        btnLogoutAdmin.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (confirm('¿Deseas cerrar sesión?')) {
+                localStorage.removeItem('usuarioActivo');
+                window.location.href = 'index.html';
+            }
+        });
     }
 
     const navLinks = document.querySelectorAll('#sidebarMenu .nav-link');
