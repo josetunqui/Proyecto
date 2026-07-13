@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos - CRUD</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagenes/empresa/icono.png">
+    <style>
+        body { background-color: #f8f9fa; }
+        .crud-container { max-width: 1200px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .table-img { width: 50px; height: 50px; object-fit: contain; }
+        .admin-section .card {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: flex-start;
+            background-color: #fff;
+            color: inherit;
+        }
+        .admin-section .card.bg-primary { background-color: #0d6efd !important; color: #fff !important; }
+        .admin-section .card.bg-success { background-color: #198754 !important; color: #fff !important; }
+        .admin-section .card.bg-info { background-color: #0dcaf0 !important; color: #000 !important; }
+        #rep-cat-breakdown {
+            width: 100%;
+        }
+        #rep-cat-breakdown .d-flex {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <img src="imagenes/empresa/logo1.png" alt="Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+            <div class="header-actions">
+                <a href="#" class="login-link" id="user-header"><i class="fa-solid fa-circle-user"></i> Admin</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse p-0 border-end" style="min-height: calc(100vh - 90px);">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column nav-pills p-3 gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" data-target="reportes-section">
+                                <i class="fa-solid fa-chart-line me-2"></i> Reportes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-target="productos-section">
+                                <i class="fa-solid fa-box me-2"></i> Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-target="categorias-section">
+                                <i class="fa-solid fa-tags me-2"></i> Categorías
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                
+                <section id="reportes-section" class="admin-section">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+                        <h1 class="h2">Panel de Reportes</h1>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-4">
+                            <div class="card text-white bg-primary shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fa-solid fa-box"></i> Total Productos</h5>
+                                    <h2 class="display-5" id="rep-total-productos">0</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-white bg-success shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fa-solid fa-tags"></i> Total Categorías</h5>
+                                    <h2 class="display-5" id="rep-total-categorias">0</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-white bg-info shadow-sm h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fa-solid fa-sack-dollar"></i> Valor Inventario</h5>
+                                    <h2 class="display-5" id="rep-valor-inventario">S/ 0.00</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-white fw-bold">Productos por Categoría</div>
+                        <div class="card-body" id="rep-cat-breakdown">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="productos-section" class="admin-section d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                        <h2 class="m-0">Gestión de Productos</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" id="btn-add-product">
+                            <i class="fa-solid fa-plus"></i> Agregar Producto
+                        </button>
+                    </div>
+                    <div class="table-responsive shadow-sm bg-white rounded">
+                        <table class="table table-bordered table-hover align-middle m-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Marca</th>
+                                    <th>Categoría</th>
+                                    <th>Precio</th>
+                                    <th class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="crud-tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="categorias-section" class="admin-section d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                        <h2 class="m-0">Gestión de Categorías</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoryModal" id="btn-add-category">
+                            <i class="fa-solid fa-plus"></i> Agregar Categoría
+                        </button>
+                    </div>
+                    <div class="table-responsive shadow-sm bg-white rounded">
+                        <table class="table table-bordered table-hover align-middle m-0" style="max-width: 600px;">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre de Categoría</th>
+                                    <th class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cat-tbody">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="crud-form">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="modal-title">Agregar Producto</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="prod-id">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nombre del Producto</label>
+                                <input type="text" class="form-control" id="prod-nombre" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Precio (S/)</label>
+                                <input type="number" step="0.01" class="form-control" id="prod-precio" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Categoría</label>
+                                <select class="form-select" id="prod-categoria" required>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="prod-marca" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">País</label>
+                                <input type="text" class="form-control" id="prod-pais" value="USA" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">URL de Imagen</label>
+                                <input type="text" class="form-control" id="prod-imagen" placeholder="ej. imagenes/productos/..." required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Descripción</label>
+                                <textarea class="form-control" id="prod-descripcion" rows="3" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Producto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="categoryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="cat-form">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="cat-modal-title">Agregar Categoría</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="cat-id">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre de Categoría</label>
+                            <input type="text" class="form-control" id="cat-nombre" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Guardar Categoría</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

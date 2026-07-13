@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos - ImportShop S.A.C.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/script.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <link rel="icon" href="imagenes/empresa/icono.png">
+
+    <style>
+        .contact-header {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        .contact-header h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .contact-header p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .banner-contact {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            margin-bottom: 40px;
+        }
+        
+        .opinion-card, .info-card {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            border: 1px solid #ddd;
+        }
+
+        .opinion-card h3, .info-card h3 {
+            font-family: 'Oswald', 'Impact', sans-serif;
+            font-weight: bold;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .opinion-card > p, .info-card > p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            color: #111;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form-control-custom {
+            background-color: #cfcece;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        .star-rating i {
+            font-size: 1.5rem;
+            color: #333;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .btn-enviar {
+            background-color: #7b88d1;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        .btn-enviar:hover {
+            background-color: #5c6ab1;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .icon-mail { background-color: #4a6fa5; }
+        .icon-whatsapp { background-color: #25d366; }
+        .icon-phone { background-color: #4a6fa5; }
+        .icon-clock { background-color: #4a6fa5; }
+        .icon-store { background-color: #4a6fa5; }
+
+        .info-text h4 {
+            margin: 0 0 5px 0;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #111;
+        }
+        .info-text p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.2;
+        }
+        .info-link {
+            margin-left: auto;
+            color: #4a6fa5;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        .info-link-chevron {
+            color: #888;
+            font-size: 1.2rem;
+            margin-left: auto;
+        }
+
+        .reviews-section {
+            text-align: center;
+            margin-bottom: 50px;
+            margin-top: 50px;
+        }
+        .reviews-section h2 {
+            font-family: 'Oswald', 'Impact', sans-serif;
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .review-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
+            height: 100%;
+            border: 1px solid #eaeaea;
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+        .review-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+            background: #ccc;
+        }
+        .review-stars {
+            color: #ffc107;
+            font-size: 1rem;
+        }
+        .review-text {
+            font-size: 0.85rem;
+            color: #333;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .store-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .store-section h3 {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+            font-family: 'Oswald', 'Impact', sans-serif;
+        }
+        .store-section h2 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #111;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        .map-image {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <img src="imagenes/empresa/logo1.png" alt="Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+            <div class="header-actions">
+                <a href="login.html" class="login-link"><i class="fa-solid fa-circle-user"></i> Iniciar sesión</a>
+                <div class="header-divider"></div>
+                <div class="cart-icon-container">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <div class="contact-header">
+            <h1>Contactos</h1>
+            <p>Queremos escucharte. Déjanos tu opinión o visitanos en nuestra sucursal.</p>
+        </div>
+
+        <img src="imagenes/banner_contactos.png" alt="Banner Contactos" class="banner-contact">
+
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="opinion-card">
+                    <h3>Opiniones De Nuestros Clientes</h3>
+                    <p>Tu opinión es muy importante para nosotros. ¿Cómo fue tu experiencia en nuestra sucursal?</p>
+                    
+                    <form>
+                        <input type="text" class="form-control-custom" placeholder="Nombre completo">
+                        <input type="email" class="form-control-custom" placeholder="Correo Electrónico">
+                        
+                        <div class="mb-3 mt-3">
+                            <label class="form-label fw-bold d-block mb-1" style="font-family: 'Courier New', Courier, monospace; font-size: 1rem;">Tu Calificación:</label>
+                            <div class="star-rating">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+
+                        <textarea class="form-control-custom" rows="4" placeholder="Déjanos tu Opinión..."></textarea>
+                        
+                        <button type="button" class="btn-enviar">Enviar opinión</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="info-card">
+                    <h3>Otras formas de Contactarnos</h3>
+                    <p>Elige la opción que mejor se adapte a lo que necesitas. Estamos para ayudarte</p>
+
+                    <div class="info-item">
+                        <div class="info-icon icon-mail"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-text">
+                            <h4>Escríbenos por correo</h4>
+                            <p>Envíanos tus dudas, sugerencias<br>o consultas por email.</p>
+                        </div>
+                        <a href="mailto:importshop@gmail.com" class="info-link">importshop@gmail.com</a>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon icon-whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="info-text">
+                            <h4>Escríbenos por WhatsApp</h4>
+                            <p>Te responderemos a la brevedad<br>por este medio.</p>
+                        </div>
+                        <span class="info-link">987 654 321</span>
+                        <i class="fa-solid fa-chevron-right info-link-chevron ms-2"></i>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon icon-phone"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-text">
+                            <h4>Llámanos por teléfono</h4>
+                            <p>Atención personalizada<br>de lunes a sábado.</p>
+                        </div>
+                        <span class="info-link">987 654 321</span>
+                        <i class="fa-solid fa-chevron-right info-link-chevron ms-2"></i>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon icon-clock"><i class="fa-solid fa-clock"></i></div>
+                        <div class="info-text">
+                            <h4>Horario de atención</h4>
+                            <p>Lunes a Sábado<br>9:00 am - 7:00 pm</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right info-link-chevron"></i>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon icon-store"><i class="fa-solid fa-store"></i></div>
+                        <div class="info-text">
+                            <h4>Visítanos en tienda</h4>
+                            <p>Atención presencial en nuestra<br>oficina principal en Lima.</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-right info-link-chevron"></i>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews-section">
+            <h2>Reseñas de Nuestros Clientes</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=User&background=6c757d&color=fff" alt="User 1" class="review-avatar">
+                            <div class="review-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text text-center">Excelente servicio. La compra en Lima fue rápida y los productos son de muy buena calidad.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User 2" class="review-avatar">
+                            <div class="review-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text text-center">Me encantó la compra. La atención al cliente es fantástica y tienen mucha variedad.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User 3" class="review-avatar">
+                            <div class="review-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text text-center">Muy buena solución a mis dudas antes de la compra. Definitivamente volveré a comprar aquí.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User 4" class="review-avatar">
+                            <div class="review-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="review-text text-center">Recomiendo que compren aquí. El recojo en tienda fue súper rápido y el personal muy amable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="store-section">
+            <h3>NUESTRA SUCURSAL</h3>
+            <h2>Visitanos directamente en nuestra tienda fisica y recibe<br>atención personalizada</h2>
+            <div class="map-container">
+                <img src="imagenes/Mapa (2).png" alt="Mapa de Sucursal" class="map-image">
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bottom-bar mt-5">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h2>Enlaces</h2>
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contactos.html">Contactos</a>
+            </div>
+            <div class="linea"></div>
+            <div class="footer-box">
+                <h2>Contactos</h2>
+                <p>importshop@gmail.com</p>
+                <p>987 654 321</p>
+                <p>Lima, Perú</p>
+            </div>
+            <div class="linea"></div>
+            <div class="footer-box">
+                <h2>Síguenos</h2>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/" target="_blank"><img src="imagenes/redes/ig.png" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="imagenes/redes/Face.png" alt="Facebook"></a>
+                    <a href="https://x.com/" target="_blank"><img src="imagenes/redes/X.png" alt="X"></a>
+                </div>
+                <div class="aliados">
+                    <p>Michael Kors | Guess | Casio</p>
+                </div>
+            </div>
+            <div class="linea"></div>
+            <div class="footer-box">
+                <h2>Métodos de Pago</h2>
+                <div class="payment-links">
+                    <img src="imagenes/redes/MetododP.png" alt="Métodos de Pago">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">ImportShop S.A.C © 2026.</p>
+            <p class="rights-text">Todos los derechos reservados. Desarrollado por Alumnos de la UTP</p>
+        </div>
+    </footer>
+    <script type="module">
+        import { initCart } from './js/cart.js';
+        initCart();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 import { productos } from './productos.js';
+import { categorias } from './categorias.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('productos-grid');
@@ -15,13 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPage = 1;
     let filteredProductos = [...productos];
 
-    const categorias = [...new Set(productos.map(p => p.categoria))].sort();
     const marcas = [...new Set(productos.map(p => p.marca))].sort();
 
     categorias.forEach(cat => {
         const option = document.createElement('option');
-        option.value = cat;
-        option.textContent = cat;
+        option.value = cat.nombre;
+        option.textContent = cat.nombre;
         selectCategoria.appendChild(option);
     });
 

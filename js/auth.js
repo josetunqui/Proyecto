@@ -3,6 +3,15 @@ const setUser = (user) => localStorage.setItem('usuarioActivo', JSON.stringify(u
 const getUsers = () => JSON.parse(localStorage.getItem('usuariosImportShop')) || [];
 const setUsers = (users) => localStorage.setItem('usuariosImportShop', JSON.stringify(users));
 
+// Create a default admin user if the list is empty
+if (getUsers().length === 0) {
+  setUsers([{
+    nombre: "Administrador",
+    correo: "admin@importshop.com",
+    password: "123"
+  }]);
+}
+
 function updateHeaderUser() {
   const user = getUser();
   document.querySelectorAll('.login-link').forEach(link => {
@@ -41,6 +50,14 @@ function initLoginPage() {
   const registerForm = document.getElementById('form-register');
   const msg = document.getElementById('auth-message');
 
+  // Pre-fill default admin credentials
+  const correoInput = document.getElementById('login-correo');
+  const passwordInput = document.getElementById('login-password');
+  if (correoInput && passwordInput) {
+      correoInput.value = 'admin@importshop.com';
+      passwordInput.value = '123';
+  }
+
   registerForm?.addEventListener('submit', (e) => {
     e.preventDefault();
     const nombre = document.getElementById('reg-nombre').value.trim();
@@ -58,9 +75,9 @@ function initLoginPage() {
     users.push(newUser);
     setUsers(users);
     setUser({ nombre, correo });
-    msg.textContent = 'Registro exitoso. Redirigiendo a productos...';
+    msg.textContent = 'Registro exitoso. Redirigiendo...';
     msg.className = 'auth-message success';
-    setTimeout(() => window.location.href = 'productos.html', 1200);
+    setTimeout(() => window.location.href = 'admin.html', 1200);
   });
 
   loginForm?.addEventListener('submit', (e) => {
@@ -78,7 +95,7 @@ function initLoginPage() {
     setUser({ nombre: user.nombre, correo: user.correo });
     msg.textContent = 'Bienvenido/a';
     msg.className = 'auth-message success';
-    setTimeout(() => window.location.href = 'productos.html', 1000);
+    setTimeout(() => window.location.href = 'admin.html', 1000);
   });
 }
 

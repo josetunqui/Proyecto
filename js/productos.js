@@ -1,4 +1,4 @@
-export const productos = [
+const defaultProductos = [
     {
         id: 33,
         nombre: "Billetera Casual Leather Black",
@@ -340,3 +340,17 @@ export const productos = [
         imagen: "imagenes/productos/30/Cartera Classic Elegance Beige.png"
     }
 ];
+
+export const productos = JSON.parse(localStorage.getItem('productosImportShop')) || defaultProductos;
+
+if (!localStorage.getItem('productosImportShop')) {
+    localStorage.setItem('productosImportShop', JSON.stringify(defaultProductos));
+}
+
+export const saveProductos = (newProductos) => {
+    if (newProductos !== productos) {
+        productos.length = 0;
+        productos.push(...newProductos);
+    }
+    localStorage.setItem('productosImportShop', JSON.stringify(productos));
+};
