@@ -1,5 +1,4 @@
 export const initCart = () => {
-    // 1. Inyectar HTML del Carrito y Modal si no existen
     if (!document.getElementById('cart-sidebar')) {
         const cartHTML = `
             <div id="cart-overlay" class="cart-overlay"></div>
@@ -104,7 +103,6 @@ export const initCart = () => {
 
         cartTotalPrice.textContent = `S/ ${total.toFixed(2)}`;
 
-        // Añadir listeners a los botones generados
         document.querySelectorAll('.btn-minus').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 updateQuantity(parseInt(e.target.dataset.id), -1);
@@ -182,7 +180,6 @@ export const initCart = () => {
         }, 2000);
     };
 
-    // Configurar Event Listeners Globales
     cartIcons.forEach(icon => {
         icon.addEventListener('click', (e) => {
             e.preventDefault();
@@ -197,7 +194,6 @@ export const initCart = () => {
         checkoutModal.classList.remove('open');
     });
 
-    // Escuchar el evento de agregar al carrito
     document.addEventListener('cartUpdated', () => {
         updateCartCount();
         if(cartSidebar.classList.contains('open')) {
@@ -209,7 +205,6 @@ export const initCart = () => {
         openCart();
     });
 
-    // Inicializar UI
     updateCartCount();
 };
 

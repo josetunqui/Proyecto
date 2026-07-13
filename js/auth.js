@@ -3,7 +3,6 @@ const setUser = (user) => localStorage.setItem('usuarioActivo', JSON.stringify(u
 const getUsers = () => JSON.parse(localStorage.getItem('usuariosImportShop')) || [];
 const setUsers = (users) => localStorage.setItem('usuariosImportShop', JSON.stringify(users));
 
-// Create a default admin user if the list is empty
 if (getUsers().length === 0) {
   setUsers([{
     nombre: "Administrador",
@@ -51,7 +50,6 @@ function initLoginPage() {
   const registerForm = document.getElementById('form-register');
   const msg = document.getElementById('auth-message');
 
-  // Pre-fill default admin credentials
   const correoInput = document.getElementById('login-correo');
   const passwordInput = document.getElementById('login-password');
   if (correoInput && passwordInput) {

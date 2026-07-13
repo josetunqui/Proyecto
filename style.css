@@ -967,11 +967,15 @@ body {
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-/* ===== LOGIN / REGISTRO ===== */
 .auth-page {
     min-height: calc(100vh - 120px);
     display: flex;
@@ -1083,8 +1087,13 @@ body {
     font-weight: 700;
 }
 
-.auth-message.success { color: #1b7f3a; }
-.auth-message.error { color: #b00020; }
+.auth-message.success {
+    color: #1b7f3a;
+}
+
+.auth-message.error {
+    color: #b00020;
+}
 
 /* ===== FOOTER ===== */
 .bottom-bar {

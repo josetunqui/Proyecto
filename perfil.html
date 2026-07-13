@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +17,11 @@
             background: #fff;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
             border: 1px solid #eee;
         }
+
         .profile-avatar {
             width: 120px;
             height: 120px;
@@ -32,17 +34,20 @@
             font-size: 3rem;
             margin: 0 auto 20px;
         }
+
         .profile-name {
             font-family: 'Oswald', 'Impact', sans-serif;
             font-size: 2rem;
             margin-bottom: 5px;
             text-transform: uppercase;
         }
+
         .profile-email {
             color: #6c757d;
             margin-bottom: 30px;
             font-size: 1.1rem;
         }
+
         .logout-btn {
             background-color: #dc3545;
             color: white;
@@ -53,11 +58,13 @@
             font-size: 1.1rem;
             transition: background 0.3s;
         }
+
         .logout-btn:hover {
             background-color: #bb2d3b;
         }
     </style>
 </head>
+
 <body>
     <header class="main-header">
         <nav class="nav-container">
@@ -95,10 +102,10 @@
     <script type="module">
         import { getUser } from './js/auth.js';
         import { initCart } from './js/cart.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
-            initCart(); // Initialize cart counts
-            
+            initCart();
+
             const user = getUser();
             if (!user || user.rol === 'admin') {
                 window.location.href = 'index.html';
@@ -116,4 +123,5 @@
         });
     </script>
 </body>
+
 </html>
