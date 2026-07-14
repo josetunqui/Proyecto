@@ -151,9 +151,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const renderProductos = () => {
+    const renderProductos = (filtro = '') => {
         crudTbody.innerHTML = '';
-        productos.forEach(p => {
+        
+        // Filtramos los productos por nombre o ID antes de pintarlos
+        const productosFiltrados = productos.filter(p => 
+            p.nombre.toLowerCase().includes(filtro.toLowerCase()) || 
+            p.id.toString().includes(filtro)
+        );
+
+        productosFiltrados.sort((a, b) => a.id - b.id);
+        productosFiltrados.forEach(p => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${p.id}</td>
@@ -197,7 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleDeleteProduct = (e) => {
         const id = parseInt(e.currentTarget.getAttribute('data-id'));
-        if (confirm(`¿Estás seguro de que deseas eliminar el producto con ID ${id}?`)) {
+        const producto = productos.find(p => p.id === id);
+        if (confirm(`¿Estás seguro de que deseas eliminar el producto   ${id} : ${producto.nombre}?`)) {
             const index = productos.findIndex(p => p.id === id);
             if (index > -1) {
                 productos.splice(index, 1);
@@ -233,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const index = productos.findIndex(p => p.id === newProduct.id);
             if (index > -1) productos[index] = newProduct;
         } else {
-            productos.unshift(newProduct);
+            productos.push(newProduct);
         }
 
         saveProductos(productos);
@@ -274,7 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
             breakdownDiv.innerHTML += progressHtml;
         }
     };
+    // BÚSQUEDA 
+    const handleAdminSearch = () => {
+        const search = document.getElementById('searchCode'); 
+        if (!search) return;
+        search.addEventListener('input', (e) => renderProductos(e.target.value));
+    };
 
+    handleAdminSearch();
     renderCategorias();
     renderProductos();
     renderReports();

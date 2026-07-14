@@ -120,9 +120,12 @@
                 <section id="productos-section" class="admin-section d-none">
                     <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
                         <h2 class="m-0">Gestión de Productos</h2>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" id="btn-add-product">
-                            <i class="fa-solid fa-plus"></i> Agregar Producto
-                        </button>
+                        <div class="d-flex gap-2">
+                            <input type="text" id="searchCode" class="form-control" placeholder="Buscar producto...">
+                            <button class="btn btn-primary text-nowrap" data-bs-toggle="modal" data-bs-target="#productModal" id="btn-add-product">
+                                <i class="fa-solid fa-plus"></i> Agregar Producto
+                            </button>
+                        </div>
                     </div>
                     <div class="table-responsive shadow-sm bg-white rounded">
                         <table class="table table-bordered table-hover align-middle m-0">

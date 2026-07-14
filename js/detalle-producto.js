@@ -108,10 +108,45 @@ document.getElementById("btnMenos").addEventListener("click", () => {
     }
 });
 
+
+const mostrarMensajeFlotante = (mensaje) => {
+  
+    const toast = document.createElement("div");
+    toast.textContent = mensaje;
+    
+   
+    toast.style.position = "fixed";
+    toast.style.bottom = "30px"; 
+    toast.style.right = "30px"; 
+    toast.style.backgroundColor = "#28a745"; 
+    toast.style.color = "white";
+    toast.style.padding = "12px 24px";
+    toast.style.borderRadius = "8px";
+    toast.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
+    toast.style.zIndex = "9999"; 
+    toast.style.fontWeight = "bold";
+    toast.style.transition = "opacity 0.3s ease-in-out";
+    toast.style.opacity = "0"; 
+
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.opacity = "1";
+    }, 10);
+
+    setTimeout(() => {
+        toast.style.opacity = "0"; 
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 2100);
+};
 const btnCesta = document.querySelector(".btn-cesta");
 if(btnCesta) {
     btnCesta.addEventListener("click", () => {
         const cant = parseInt(cantidad.value);
         addToCart(producto, cant);
+
+        mostrarMensajeFlotante("¡ Agregado al carrito !");
     });
 }
