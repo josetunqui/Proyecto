@@ -91,11 +91,33 @@
             <div class="profile-avatar">
                 <i class="fa-solid fa-user"></i>
             </div>
-            <h2 class="profile-name" id="user-name">Cargando...</h2>
-            <p class="profile-email" id="user-email">cargando...</p>
-            <button class="logout-btn" id="btn-logout">
-                <i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión
-            </button>
+            <h2 class="profile-name mb-4">MI PERFIL</h2>
+            
+            <form id="profile-form" class="text-start">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Nombre Completo</label>
+                    <input type="text" id="input-name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Correo Electrónico</label>
+                    <input type="email" id="input-email" class="form-control" readonly style="background-color: #e9ecef; cursor: not-allowed;" title="El correo no se puede cambiar">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Rol</label>
+                    <input type="text" id="input-role" class="form-control" readonly style="background-color: #e9ecef; cursor: not-allowed;">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Nueva Contraseña (Opcional)</label>
+                    <input type="password" id="input-password" class="form-control" placeholder="Dejar en blanco para mantener la actual">
+                </div>
+                
+                <div id="profile-msg" class="mb-3 text-center" style="display: none; font-weight: bold;"></div>
+
+                <div class="d-flex justify-content-between mt-4">
+                    <button type="submit" class="btn btn-primary px-4 fw-bold"><i class="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
+                    <button type="button" class="btn btn-danger px-4 fw-bold" id="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
+                </div>
+            </form>
         </div>
     </main>
 
@@ -111,8 +133,49 @@
                 window.location.href = 'index.html';
                 return;
             }
-            document.getElementById('user-name').textContent = user.nombre;
-            document.getElementById('user-email').textContent = user.correo;
+            
+            document.getElementById('input-name').value = user.nombre;
+            document.getElementById('input-email').value = user.correo;
+            document.getElementById('input-role').value = user.rol.toUpperCase();
+
+            document.getElementById('profile-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newName = document.getElementById('input-name').value.trim();
+                const newPassword = document.getElementById('input-password').value.trim();
+                const msgBox = document.getElementById('profile-msg');
+                
+                if(!newName) return;
+
+                let users = JSON.parse(localStorage.getItem('usuariosImportShop')) || [];
+                const userIndex = users.findIndex(u => u.correo === user.correo);
+                
+                if (userIndex !== -1) {
+                    users[userIndex].nombre = newName;
+                    if (newPassword) {
+                        users[userIndex].password = newPassword;
+                    }
+                    localStorage.setItem('usuariosImportShop', JSON.stringify(users));
+                }
+                
+                user.nombre = newName;
+                localStorage.setItem('usuarioActivo', JSON.stringify(user));
+
+                msgBox.textContent = '¡Datos actualizados correctamente!';
+                msgBox.style.color = '#198754';
+                msgBox.style.display = 'block';
+
+                const link = document.querySelector('.login-link');
+                if(link) {
+                    link.innerHTML = `<i class="fa-solid fa-circle-user"></i> ${newName}`;
+                }
+
+                setTimeout(() => {
+                    msgBox.style.display = 'none';
+                    if (newPassword) {
+                        document.getElementById('input-password').value = '';
+                    }
+                }, 3000);
+            });
 
             document.getElementById('btn-logout').addEventListener('click', () => {
                 if (confirm('¿Deseas cerrar sesión?')) {

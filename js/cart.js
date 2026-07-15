@@ -1,8 +1,9 @@
 
 const CUPONES = {
-     'BIENVENIDO1': 0.01,
-     'PERU': 0.05,        
-     'DESCUENTOM': 0.02,
+    'BIENVENIDO1': 0.01,
+    'PERU': 0.05,
+    'DESCUENTOM': 0.02,
+    'DCST10': 0.10,
 };
 
 let couponDiscount = 0;       // Almacena el porcentaje del cupón activo (ej: 0.05)
@@ -37,6 +38,7 @@ export const initCart = () => {
                             <input type="text" id="promo-input" placeholder="INGRESE CUPÓN" style="flex-grow: 1; padding: 5px; text-transform: uppercase;">
                             <button id="btn-apply-promo" style="padding: 5px 10px; cursor: pointer; background: #333; color: white; border: none;">Aplicar</button>
                         </div>
+                        <small style="color: #666; display: block; margin-top: 5px;">Ejemplos: DCST10, PERU, BIENVENIDO1</small>
                         <small id="promo-msg" style="color: green; display: none; font-weight: bold; margin-top: 5px;"></small>
                     </div>
                 </div>
@@ -88,16 +90,14 @@ export const initCart = () => {
     const closeCartBtn = document.getElementById('close-cart');
     const cartItemsContainer = document.getElementById('cart-items');
     const btnCheckout = document.getElementById('btn-checkout');
-    
-    // Referencias a los totales y descuentos
+
     const cartSubtotal = document.getElementById('cart-subtotal');
     const cartTotalPrice = document.getElementById('cart-total-price');
     const discountSelect = document.getElementById('discount-select');
     const promoInput = document.getElementById('promo-input');
     const btnApplyPromo = document.getElementById('btn-apply-promo');
     const promoMsg = document.getElementById('promo-msg');
-    
-    // Referencias a las filas de visualización de descuentos
+
     const rowDiscountSelect = document.getElementById('row-discount-select');
     const valDiscountSelect = document.getElementById('val-discount-select');
     const rowDiscountPromo = document.getElementById('row-discount-promo');
@@ -112,7 +112,7 @@ export const initCart = () => {
     const btnCloseCheckout = document.getElementById('btn-close-checkout');
 
     const getCart = () => JSON.parse(localStorage.getItem('cart')) || [];
-    
+
     const saveCart = (cart) => {
         localStorage.setItem('cart', JSON.stringify(cart));
     };
@@ -189,7 +189,7 @@ export const initCart = () => {
     const renderCartItems = () => {
         const cart = getCart();
         cartItemsContainer.innerHTML = '';
-        
+
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p class="empty-cart" style="text-align: center; padding: 20px;">Tu carrito está vacío.</p>';
             calculateTotals();
@@ -283,12 +283,12 @@ export const initCart = () => {
         discountSelect.value = "0";
     };
 
-const simulatePurchase = () => {
+    const simulatePurchase = () => {
         const cart = getCart();
         const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo'));
-        
+
         if (cart.length === 0) return;
-        
+
         // 1. Validar que el usuario haya iniciado sesión
         if (!usuarioActivo) {
             alert('Para continuar con la compra debes iniciar sesión o registrarte.');
@@ -302,7 +302,7 @@ const simulatePurchase = () => {
             alert('Las cuentas de administrador no están habilitadas para realizar compras. Por favor, ingresa con una cuenta de cliente.');
             return;
         }
-        
+
         // 3. Proceder con la simulación de compra si pasó las validaciones
         closeCart();
         checkoutModal.classList.add('open');
@@ -312,9 +312,9 @@ const simulatePurchase = () => {
         setTimeout(() => {
             checkoutLoading.classList.add('hidden');
             checkoutSuccess.classList.remove('hidden');
-            
-            saveCart([]); 
-            resetDiscounts(); 
+
+            saveCart([]);
+            resetDiscounts();
             updateCartCount();
         }, 2000);
     };
@@ -326,17 +326,17 @@ const simulatePurchase = () => {
     // 3. EVENTO DE CUPONES DINÁMICOS
     btnApplyPromo.addEventListener('click', () => {
         const code = promoInput.value.trim().toUpperCase();
-        
+
         // Verifica si el código escrito existe en nuestro objeto CUPONES
         if (CUPONES[code] !== undefined) {
             couponDiscount = CUPONES[code];
             appliedCouponName = code;
-            
+
             promoMsg.style.display = 'block';
             promoMsg.textContent = `¡Cupón ${code} aplicado (${couponDiscount * 100}%)!`;
             promoInput.disabled = true;
             btnApplyPromo.disabled = true;
-            calculateTotals(); 
+            calculateTotals();
         } else {
             alert('Código promocional inválido.');
         }
@@ -358,7 +358,7 @@ const simulatePurchase = () => {
 
     document.addEventListener('cartUpdated', () => {
         updateCartCount();
-        if(cartSidebar.classList.contains('open')) {
+        if (cartSidebar.classList.contains('open')) {
             renderCartItems();
         }
     });

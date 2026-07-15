@@ -21,7 +21,7 @@ function updateHeaderUser() {
         link.href = 'admin.html';
         link.title = 'Ir al Panel de Administración';
       } else {
-        link.innerHTML = `<i class="fa-solid fa-circle-user"></i> Mi Perfil`;
+        link.innerHTML = `<i class="fa-solid fa-circle-user"></i> ${user.nombre}`;
         link.href = 'perfil.html';
         link.title = 'Ir a mi perfil';
       }

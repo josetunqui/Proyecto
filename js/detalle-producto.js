@@ -144,6 +144,19 @@ const mostrarMensajeFlotante = (mensaje) => {
 const btnCesta = document.querySelector(".btn-cesta");
 if(btnCesta) {
     btnCesta.addEventListener("click", () => {
+        const usuarioActivo = JSON.parse(localStorage.getItem('usuarioActivo'));
+        
+        if (!usuarioActivo) {
+            alert('Para agregar productos a la cesta debes iniciar sesión o registrarte.');
+            window.location.href = 'login.html';
+            return;
+        }
+
+        if (usuarioActivo.rol === 'admin' || usuarioActivo.rol === 'administrador') {
+            alert('Las cuentas de administrador no pueden realizar compras.');
+            return;
+        }
+
         const cant = parseInt(cantidad.value);
         addToCart(producto, cant);
 
